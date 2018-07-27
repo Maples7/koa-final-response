@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/Maples7/koa-final-response/issues"
   },
-  "homepage": "https://github.com/Maples7/koa-final-response#readme"
+  "homepage": "https://github.com/Maples7/koa-final-response#readme",
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "dependencies": {
+    "boom": "^7.2.0"
+  }
 }
