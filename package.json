@@ -1,0 +1,26 @@
+{
+  "name": "koa-final-response",
+  "version": "1.0.0",
+  "description": "The very outer middleware of Koa to handle every response of every request.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maples7/koa-final-response.git"
+  },
+  "keywords": [
+    "koa",
+    "response",
+    "final",
+    "middleware",
+    "outer"
+  ],
+  "author": "Maples7 <maples7.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maples7/koa-final-response/issues"
+  },
+  "homepage": "https://github.com/Maples7/koa-final-response#readme"
+}
