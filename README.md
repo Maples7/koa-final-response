@@ -43,6 +43,12 @@ mountRoutes(app, path.join(__dirname, 'controllers'), {
 app.listen(3000);
 ```
 
+### How to return results
+
+1. For normal responses, you can pass your result data to `ctx.body` directly just following the standard Koa way；
+
+2. For error responses, we recommend you use [Boom](https://github.com/hapijs/boom) to pass those expected errors like `throw Boom.unauthorized('invalid password')`. Besides, any unexpected errors and non-Boom errors thrown by yourself will also be catched and handled well as you want.
+
 ### Responses
 
 - Normal response
@@ -54,13 +60,13 @@ app.listen(3000);
   }
   ```
 
-- Exception response
+- Error response
 
   ```json
   {
     "success": false,
-    "error": "Method Not Allowed", // HTTP error correlated with HTTP statusCode
-    "message": "HTTP method for this API is not allowed" // Error message
+    "error": "Method Not Allowed", // HTTP error correlated to HTTP statusCode
+    "message": "HTTP method for this API is not allowed" // error message
   }
   ```
 
@@ -77,13 +83,15 @@ app.listen(3000);
 ### API
 
 ```js
-app.use(finalResp({
-  env,  // String. you can pass environmental variable such as NODE_ENV to it. if it is `production`, we will not return error details to user but a vague error messege like `An internal server error occurred`. Default value: 'production'
-  errStatusCodePropertie // Array. it is about where to find HTTP Status Code of response while an error is thrown. We will search a valid number from property of Error Object in order. Default value: ['status', 'statusCode', 'code']
-}));
+app.use(
+  finalResp({
+    env, // String. you can pass environmental variable such as NODE_ENV to it. if it is `production`, we will not return error details to user but a vague error messege like `An internal server error occurred`. Default value: 'production'.
+    errStatusCodePropertie // Array. it is about where to find HTTP Status Code of response while an error is thrown. We will search a valid number from property of Error Object in order. Default value: ['statusCode', 'status', 'code']. And the default HTTP Status Code for error response is 500.
+  })
+);
 ```
 
-You are welcomed to review _test.js_, _controllers_ dir in this project for more information of usage.
+You are welcomed to review _test.js_ and _controllers_ dir in this project for more information of usage.
 
 ## LICENSE
 
