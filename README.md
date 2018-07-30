@@ -45,7 +45,7 @@ app.listen(3000);
 
 ### How to return results
 
-1. For normal responses, you can pass your result data to `ctx.body` directly just following the standard Koa way；
+1. For normal responses, you can pass your result data to `ctx.body` directly just following the standard Koa way;
 
 2. For error responses, we recommend you use [Boom](https://github.com/hapijs/boom) to pass those expected errors like `throw Boom.unauthorized('invalid password')`. Besides, any unexpected errors and non-Boom errors thrown by yourself will also be catched and handled well as you want.
 
@@ -92,6 +92,12 @@ app.use(
 ```
 
 You are welcomed to review _test.js_ and _controllers_ dir in this project for more information of usage.
+
+## Relatives
+
+- [koa-mount-routes](https://github.com/Maples7/koa-mount-routes)
+- [express-mount-routes](https://github.com/Maples7/express-mount-routes)
+- [express-final-response](https://github.com/Maples7/express-final-response)
 
 ## LICENSE
 
