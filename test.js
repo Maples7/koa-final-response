@@ -28,6 +28,7 @@ function makeApp() {
 
 function makeApp2() {
   const app = new Koa();
+  app.context.log = console;
   app.use(finalResp({ env: 'development' }));
   mountRoutes(app, path.join(__dirname, 'controllers'), {
     allowedMethods: {
@@ -130,6 +131,15 @@ test('GET /tests/6', async t => {
   t.is(res.status, 418);
   t.is(res.body.error, "I'm a teapot");
   t.is(res.body.message, 'throw a teapot');
+});
+
+test('GET /tests/7', async t => {
+  t.plan(2);
+
+  const res = await request(makeApp()).get('/tests/7');
+
+  t.is(res.status, 204);
+  t.is(res.headers['content-length'], undefined);
 });
 
 test('GET /tests/100', async t => {

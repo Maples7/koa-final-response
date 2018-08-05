@@ -87,6 +87,7 @@ app.use(
   finalResp({
     env, // String. you can pass environmental variable such as NODE_ENV to it. if it is `production`, we will not return error details to user but a vague error messege like `An internal server error occurred`. Default value: 'production'.
     errStatusCodePropertie // Array. it is about where to find HTTP Status Code of response while an error is thrown. We will search a valid number from property of Error Object in order. Default value: ['statusCode', 'status', 'code']. And the default HTTP Status Code for error response is 500.
+    logger // Object/`false`. You can pass a logger here or let `ctx.log` point to a logger to log requests error such as `console` or any other logger with function `error` inside. If you want disable error log anyway, pass `false`. Default value: null.
   })
 );
 ```

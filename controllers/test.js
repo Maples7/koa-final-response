@@ -21,5 +21,8 @@ module.exports = {
   },
   '/6': ctx => {
     throw Boom.teapot('throw a teapot');
+  },
+  '/7': ctx => {
+    ctx.status = 204;
   }
 };
