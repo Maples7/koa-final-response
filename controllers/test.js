@@ -24,5 +24,13 @@ module.exports = {
   },
   '/7': ctx => {
     ctx.status = 204;
+  },
+  '/8': ctx => {
+    ctx.body = {
+      key: 'value'
+    };
+  },
+  '/9': ctx => {
+    ctx.throw(400, 'name required');
   }
 };

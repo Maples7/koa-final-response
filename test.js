@@ -142,6 +142,25 @@ test('GET /tests/7', async t => {
   t.is(res.headers['content-length'], undefined);
 });
 
+test('GET /tests/8', async t => {
+  t.plan(2);
+
+  const res = await request(makeApp()).get('/tests/8');
+
+  t.is(res.status, 200);
+  t.is(res.body.data.key, 'value');
+});
+
+test('GET /tests/9', async t => {
+  t.plan(3);
+
+  const res = await request(makeApp()).get('/tests/9');
+
+  t.is(res.status, 400);
+  t.is(res.body.error, 'Bad Request');
+  t.is(res.body.message, 'name required');
+});
+
 test('GET /tests/100', async t => {
   t.plan(3);
 
