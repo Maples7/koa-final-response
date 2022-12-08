@@ -37,7 +37,7 @@
     "boom": "^7.2.0"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^5.1.0",
     "coveralls": "^3.0.2",
     "koa": "^2.5.2",
     "koa-mount-routes": "^1.0.1",
